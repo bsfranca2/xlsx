@@ -1,0 +1,80 @@
+{
+  "name": "@buh/xlsx-read",
+  "version": "0.1.0",
+  "description": "another xlsx reader",
+  "type": "module",
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "bun run build.ts",
+    "prepublishOnly": "bun run build",
+    "test": "bun run tests/index.ts",
+    "format": "prettier **/*.ts --check",
+    "format:fix": "prettier **/*.ts --write",
+    "lint": "eslint ."
+  },
+  "license": "MIT",
+  "files": [
+    "package.json",
+    "LICENSE",
+    "README.md",
+    "dist"
+  ],
+  "keywords": [
+    "xlsx",
+    "bun"
+  ],
+  "homepage": "https://github.com/bsfranca2/xlsx#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bsfranca2/xlsx.git"
+  },
+  "bugs": "https://github.com/bsfranca2/xlsx/issues",
+  "author": "Bruno Franca <bsfranca2@gmail.com>",
+  "dependencies": {
+    "@buh/unzip": "0.1.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "bun-plugin-dts": "^0.2.0",
+    "bun-types": "latest",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "root": true,
+    "rules": {
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        {
+          "prefer": "type-imports",
+          "fixStyle": "separate-type-imports",
+          "disallowTypeAnnotations": false
+        }
+      ]
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "semi": true,
+    "tabWidth": 2,
+    "quoteProps": "as-needed",
+    "arrowParens": "always"
+  }
+}
